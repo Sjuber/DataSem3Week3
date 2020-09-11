@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #container{
+                width: 226px;
+                height: 274px;
+                border: 3px solid darkblue;
+                margin: auto
+            }
+            .t1, .t4{
+                border: 1px solid black;
+                height: 48px;
+                margin-left: 3px;
+                margin-top: 3px;
+                display: inline-block;
+                text-align: center;
+                line-height: 48px;
+            }
+            .t1{
+                width: 48px;
+            }
+            .t4{
+                width: 219px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="display" class="t4"></div>
+            <div id="buttons">
+                <div class="t1">7</div>
+                <div class="t1">8</div>
+                <div class="t1">9</div>
+                <div class="t1">/</div>
+
+                <div class="t1">4</div>
+                <div class="t1">5</div>
+                <div class="t1">6</div>
+                <div class="t1">*</div>
+
+                <div class="t1">1</div>
+                <div class="t1">2</div>
+                <div class="t1">3</div>
+                <div class="t1">-</div>
+
+                <div class="t1">0</div>
+                <div class="t1">.</div>
+                <div class="t1">+</div>
+                <div id="calculate" class="t1">=</div>
+            </div>
+        </div>
+
+        <script>
+
+
+// Set display to a string
+
+
+
+            let display = document.getElementById("display");
+            buttonsDiv = document.getElementById("buttons");
+            buttonsDiv.addEventListener('click', (event) => {
+                event.preventDefault();
+                keyPressed = event.target.innerText;
+                display.innerHTML += keyPressed;
+                var dis = display.innerHTML.toString();
+
+
+
+                console.log(dis)
+
+
+
+            });
+            var buttonCalc = document.getElementById("calculate");
+            buttonCalc.addEventListener('click', (event) => {
+                event.stopPropagation();
+                keyPressed = event.target.innerText;
+
+                var dis = display.innerHTML.toString();
+
+                var add = dis.indexOf('+');
+                var min = dis.indexOf('-');
+                var div = dis.indexOf('/');
+                var mul = dis.indexOf('*');
+
+                console.log(min + ":" + add + ":" + mul + ":" + div);
+
+                if (min != -1) {
+                    var Minrecal = dis.split("-");
+                    var x2 = Number(Minrecal[0]);
+                    var y2 = Number(Minrecal[1]);
+                    var Mineregan = x2 - y2;
+                    display.innerHTML = Mineregan;
+                } else if (add != -1) {
+                    var Addrecal = dis.split("+");
+                    var x1 = Number(Addrecal[0]);
+                    var y1 = Number(Addrecal[1]);
+                    var Adderegan = x1 + y1;
+                    display.innerHTML = Adderegan;
+                } else if (mul != -1) {
+                    var Mulrecal = dis.split("*");
+                    var x1 = Number(Mulrecal[0]);
+                    var y1 = Number(Mulrecal[1]);
+                    var Muleregan = x1 * y1;
+                    display.innerHTML = Muleregan;
+                } else if (div != -1) {
+                    var Divrecal = dis.split("/");
+                    var x1 = Number(Divrecal[0]);
+                    var y1 = Number(Divrecal[1]);
+                    var Diveregan = x1 / y1;
+                    display.innerHTML = Diveregan;
+                }
+
+            });
+
+
+
+//            document.getElementById('calculate').onclick = function(e){
+//                var add = 
+//        
+//    }
+
+
+            // Om til string  
+            // set = to begin calculation of the string
+            //  add = dis.indexOf(et "+");
+
+        </script>
+
+    </body>
+</html>

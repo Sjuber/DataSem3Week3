@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <h1 id="bongo" >Stas</h1>
+    <form method="get" id="form1">
+        <input type="text" id="neuname" name="neuname">
+    </form>
+    <button type="submit" id="dipper" form="form1" value="Submit">Add name back</button>
+    <button type="submit" id="fronter" form="form1" value="Submit">Add name front</button>
+    <button type="submit" id="skipper" form="form1" value="Submit">Remove top name</button>
+
+    <ul id="ull"></ul>
+    <body>
+
+
+        <script>
+            // First, an array of names
+            var navne = ["Dan", "Peter", "Kristiana", "Niels"];
+
+            // Then, i set the names up in a nice fascion
+            var PrinNavn = navne.map(function wonky(word) {
+                return "<li>" + word + "</li>";
+            });
+            // Then here, i make it into a string
+            var PNVN = PrinNavn.join("");
+            // here, i set the ul with the id of ull yo the arraylist to Stringed
+            document.getElementById('ull').innerHTML = PNVN;
+
+            // here, i set a var to be the value of the add button
+            var byton = document.getElementById('dipper');
+            
+            // and then we set the button to react by it being clicked on to a given function
+            byton.onclick = function addpeep(e) {
+                // I prevent it from defaulting
+                e.preventDefault();
+                // I set the name var to be the id of neuname
+                var name = document.getElementById('neuname').value;
+                // And i push it as a string here with fasion, joins it and prints the array again
+                PrinNavn.push("<li>" + name + "</li>");
+                PNVN = PrinNavn.join("");
+                document.getElementById('ull').innerHTML = PNVN;
+            }
+            // here is  front   add ee    re
+            var buton = document.getElementById('fronter');
+            buton.onclick = function addpiip(e) {
+                // I prevent it from defaulting
+                e.preventDefault();
+                // I set the name var to be the id of neuname
+                var name = document.getElementById('neuname').value;
+                // And i shift it as a string here with fasion, joins it and prints the array again
+                PrinNavn.unshift("<li>" + name + "</li>");
+                PNVN = PrinNavn.join("");
+                document.getElementById('ull').innerHTML = PNVN;
+            }
+            
+                        //here is the remover from back
+            var baton = document.getElementById('skipper');
+            baton.onclick = function remop(e) {
+                // I prevent it from defaulting
+                e.preventDefault();
+//                // I set the name var to be the id of neuname
+//                var name = document.getElementById('neuname').value;
+                // And i shift it as a string here with fasion, joins it and prints the array again
+                PrinNavn.shift();
+                PNVN = PrinNavn.join("");
+                document.getElementById('ull').innerHTML = PNVN;
+            }
+        </script>
+
+    </body>
+</html>

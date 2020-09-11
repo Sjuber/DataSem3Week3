@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <body>
+        <div id="nr1">Stuffs</div>
+        <button id="b1" onclick="NeuCol1()">Click me</button>
+        <div id="nr2">and</div>
+        <button id="b2" onclick="NeuCol2()">Click me</button>
+        <div id="nr3">things.</div>
+        <button id="b3" onclick="NeuCol3()">Click me</button>
+        <script>
+            document.getElementsByTagName(nr1);
+            nr1.style.backgroundColor = "red";
+            document.getElementsByTagName(nr2);
+            nr2.style.backgroundColor = "blue";
+            document.getElementsByTagName(nr3);
+            nr3.style.backgroundColor = "lightgray";
+            
+            function NeuCol1(){
+                nr1.style.backgroundColor = "blue";
+            }
+            function NeuCol2(){
+                nr2.style.backgroundColor = "red";
+            }
+            function NeuCol3(){
+                nr3.style.backgroundColor = "darkgray";
+            }
+        </script>
+    </body>
+</html>

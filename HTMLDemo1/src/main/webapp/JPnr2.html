@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+            .myDiv1{
+                width: 365px; height: 70px;background-color:yellow; margin:1px;
+            }
+
+            p{
+                font-size: 55px; background-color: red; 
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div class="myDiv1" id="outer">Placeholder King
+
+            <div class="myDiv1" id="myDiv1">Hallo, i am PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv2">Hallo, i am also a PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv3">Hallo, i am also a fucking PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv4">Hallo, i PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv5">Hallo, PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv6">Hallo, i am</div>
+            <div class="myDiv1" id="myDiv7">Hallo, i PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv8">Hallo, i also PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv9">PLACEHOLDERID</div>
+            <div class="myDiv1" id="myDiv10">Hallo, i am also</div>
+
+        </div>
+
+        <p id="parot1" onclick="IdText(this)">Hi there</p>
+
+        <script>
+//            var outer = document.getElementById("outer");
+//            outer.onclick = function (e) {
+////                var me = this;
+//                var target = e.target;
+//
+//                console.log("Me id = " + target.id);
+//                alert("Me id = " + target.id);
+//                console.log(target.id);
+//            }
+            
+            
+            
+            document.getElementById('outer').onclick = function(e){
+                 var target = e.target;
+                var number = document.getElementById('parot1').innerHTML = 'This ones id is: ' + target.innerHTML;
+            }
+            
+            
+            
+//            var parot1 = document.getElementById("parot1");
+//            var outer = document.getElementById("outer");
+//                outer.onclick = function (z) {
+//                    var target = z.target;
+//                
+//                z.innerHTML = "My id is " + target.id;
+//                alert("DING DONG CONNECTION BUDDY" + target.id)
+//            };
+
+        </script>
+    </body>
+</html>
